@@ -1,6 +1,5 @@
 package com.company.lab1;
 
-
 import java.io.*;
 import java.util.*;
 import java.util.regex.Matcher;
@@ -8,24 +7,17 @@ import java.util.regex.Pattern;
 
 
 public class Scanner  {
-    private static int amountOfWords;
-    private static final Map<String,Integer> wordDataMap = new HashMap<>();
 
-    public static boolean readWordsFrom(String[] args) {
-        if(args.length != Constants.NUMBER_OF_INPUT_PARAMETERS) {
-            System.out.println("wrong number of arguments\n\n\n");
-            return false;
-        }
-        return true;
-    }
-
-    public static void count(File fin)  {
+    public static HashMap<String,Integer> count(String finIn)  {
         String REGEX  = "[А-Яа-яЁёA-Za-z_0-9]+";
+        File fin = new File(finIn);
         Pattern pattern = Pattern.compile(REGEX);
+        HashMap<String,Integer> wordDataMap = new HashMap<>();
         String string;
         Matcher matcher;
 
         try (BufferedReader reader = new BufferedReader(new FileReader(fin))) {
+            int amountOfWords = 0;
             while ((string = reader.readLine()) != null) {
                 matcher = pattern.matcher(string);
                 while (matcher.find()) {
@@ -42,12 +34,7 @@ public class Scanner  {
         catch (IOException e) {
             System.err.println(e.getMessage());
         }
-    }
-    public static Map<String, Integer> getWordDataMap() {
         return wordDataMap;
-    }
-    public static int getAmountOfWords() {
-        return amountOfWords;
     }
 
 }

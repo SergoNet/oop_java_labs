@@ -1,26 +1,21 @@
 package com.company.lab1;
 
-
-import java.io.*;
 import java.util.*;
 
-
 public class Main {
-    public static void main(String[] args) throws IOException {
-        if(!Scanner.readWordsFrom(args)) {
-            System.exit(-1);
-        }
-        File fin = new File("src"+ File.separator + args[Constants.READ_FILE]);
-        Scanner.count(fin);
-        Map<String,Integer> wordData = Scanner.getWordDataMap();
 
-        int amountOfWords = Scanner.getAmountOfWords();
-        List<Map.Entry<String,Integer>> list = new ArrayList<>(wordData.entrySet());
+    public static void main(String[] args) {
+
+        Validity.readWordsFrom(args);
+
+        String finIn = args[Constants.READ_FILE];
+        HashMap<String,Integer> wordData = Scanner.count(finIn);
+
         CreateList ml = new CreateList();
-        ml.creList(list);
+        List<Map.Entry<String,Integer>> list = ml.creList(wordData);
 
-        File out = new File(args[Constants.FILE_TO_WRITE]);
-        Printer.print(out,list,amountOfWords);
+        String finOut = args[Constants.FILE_TO_WRITE];
+        Printer.print(finOut,list);
         System.exit(0);
     }
 
