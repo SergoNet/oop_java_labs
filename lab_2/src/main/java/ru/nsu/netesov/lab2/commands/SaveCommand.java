@@ -29,6 +29,7 @@ public class SaveCommand implements Command {
         }
         logger.info(args.get(0) +  " command finishes work");
     }
+
     private void validate(List<String> args) {
         if (args.size() != 2) {
             throw new IncorrectAmountOfArgsException("save command needs 1 arg");

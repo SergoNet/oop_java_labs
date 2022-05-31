@@ -1,8 +1,8 @@
 package ru.nsu.netesov.lab2;
 
+
 import ru.nsu.netesov.lab2.commands.Command;
 import org.apache.log4j.Logger;
-
 
 public class Calculator {
     private final Logger logger = Logger.getLogger(this.getClass());
@@ -15,7 +15,6 @@ public class Calculator {
         try {
             Fabric fabric = new Fabric();
             var commandsAndTheirArgs = parser.parse(args);
-
             for (var commandAndArgs: commandsAndTheirArgs) {
                 Command command = fabric.getCommand(commandAndArgs.get(0));
 

@@ -1,5 +1,6 @@
 package ru.nsu.netesov.lab2;
 
+
 import org.apache.log4j.Logger;
 import java.io.File;
 import java.io.IOException;
