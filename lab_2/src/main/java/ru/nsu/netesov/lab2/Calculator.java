@@ -2,7 +2,8 @@ package ru.nsu.netesov.lab2;
 
 import ru.nsu.netesov.lab2.commands.Command;
 import org.apache.log4j.Logger;
-
+import ru.nsu.netesov.lab2.exceptions.CantCreateCommandException;
+import ru.nsu.netesov.lab2.exceptions.FabricExceptions;
 
 public class Calculator {
     private final Logger logger = Logger.getLogger(this.getClass());
@@ -13,9 +14,13 @@ public class Calculator {
     public void execute(String[] args) {
         logger.info("calculator starts working");
         try {
+            Fabric fabric = new Fabric();
+            Calculator calculator = new Calculator();
             var commandsAndTheirArgs = parser.parse(args);
+
             for (var commandAndArgs: commandsAndTheirArgs) {
-                Command command = CommandFabric.getInstance().create(commandAndArgs.get(0));
+                Command command = fabric.getCommand(commandAndArgs.get(0));
+
                 try {
                     logger.info(commandAndArgs.get(0) +  " command starts working with context: "
                             + context + " and with args: " + commandAndArgs);
@@ -31,8 +36,5 @@ public class Calculator {
         }
         logger.info("calculator finishes work");
     }
-
-
-
 }
 

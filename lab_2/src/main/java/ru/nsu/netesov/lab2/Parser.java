@@ -48,7 +48,7 @@ public class Parser {
             scanner = new Scanner(System.in);
         } else {
             File file = new File(args[0]);
-            Utility.validateFile(file,"r");
+            //Utility.validateFile(file,"r");
             scanner = new Scanner(file);
         }
         return scanner;

@@ -11,15 +11,8 @@ public class SqrtCommand implements Command{
 
     @Override
     public void execute(Context context, List<String> args) {
-        //validate(args);
         double number = context.pop();
         context.push(Math.sqrt(number));
         logger.info(args.get(0) +  " command finishes work with result: " + context.peek());
-    }
-
-    private void validate(List<String> args) {
-        if (args.size() != 2) {
-            throw new IncorrectAmountOfArgsException("SQRT command needs 1 arg");
-        }
     }
 }

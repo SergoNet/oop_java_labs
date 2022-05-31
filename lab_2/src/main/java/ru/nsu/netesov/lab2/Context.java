@@ -17,7 +17,6 @@ public class Context {
     private final HashMap<String, Double> constants = new HashMap<>();
 
     public Double pop() throws EmptyStackException{
-
         try {
             Double value = stack.pop();
             return value;
@@ -55,10 +54,6 @@ public class Context {
             push(values[i]);
         }
         return values;
-    }
-
-    public double popReturn() {
-        return stack.pop();
     }
 
     public Double getValueByKey(String key) throws ThereIsNoSuchKeyException {

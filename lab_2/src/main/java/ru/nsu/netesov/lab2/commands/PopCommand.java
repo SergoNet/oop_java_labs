@@ -14,5 +14,7 @@ public class PopCommand implements Command {
 
         context.pop();
         logger.info(args.get(0) +  " command finishes work with context: " + context);
+
+
     }
 }
