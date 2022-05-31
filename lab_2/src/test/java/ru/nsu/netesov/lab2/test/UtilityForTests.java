@@ -11,7 +11,6 @@ public class UtilityForTests {
     public static String key2 = "key2";
     public static String correctFileName = "b.txt";
     public static String incorrectFileName = "/df";
-    public static String fictiveCommand = "command";
     public static void removeAndAddArg(List<String> args, int idx, String value) {
         args.remove(idx);
         args.add(value);

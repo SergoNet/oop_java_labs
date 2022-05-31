@@ -1,6 +1,5 @@
 package ru.nsu.netesov.lab2.test;
 
-
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import ru.nsu.netesov.lab2.Context;
@@ -60,7 +59,6 @@ public class SaveCommandTest {
         Context context = new Context();
         List<String> args = new ArrayList<>();
         args.add("SAVE");
-
 
         String expected = "save command needs 1 arg";
         Exception exception = assertThrows(IncorrectAmountOfArgsException.class,

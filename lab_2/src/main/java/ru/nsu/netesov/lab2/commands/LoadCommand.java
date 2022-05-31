@@ -12,13 +12,11 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class LoadCommand implements Command{
-
     private final Logger logger = Logger.getLogger(this.getClass());
 
     @Override
     public void execute(Context context, List<String> args) {
         validate(args);
-
         try (BufferedReader reader = new BufferedReader(new FileReader(args.get(1)))) {
             Pattern pattern = Pattern.compile(Utility.anyWordBetweenWhiteSpaces);
             String line;
@@ -40,7 +38,6 @@ public class LoadCommand implements Command{
         if (args.size() != 2) {
             throw new IncorrectAmountOfArgsException("load command needs 1 arg");
         }
-
         try {
             File file = new File(args.get(1));
             Utility.validateFile(file,"r");

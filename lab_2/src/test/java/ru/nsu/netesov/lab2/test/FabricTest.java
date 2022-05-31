@@ -1,14 +1,13 @@
 package ru.nsu.netesov.lab2.test;
 
 import org.junit.jupiter.api.Test;
-import ru.nsu.netesov.lab2.Calculator;
 import ru.nsu.netesov.lab2.Fabric;
 import ru.nsu.netesov.lab2.Utility;
 import ru.nsu.netesov.lab2.exceptions.CantCreateCommandException;
 import ru.nsu.netesov.lab2.exceptions.FabricExceptions;
 
 import static org.junit.jupiter.api.Assertions.assertSame;
-//import static sun.security.tools.keytool.Main.Command.getCommand;
+
 
 import org.junit.jupiter.api.Assertions;
 

@@ -6,7 +6,6 @@ import ru.nsu.netesov.lab2.Context;
 import java.util.List;
 
 public class PrintCommand implements Command {
-
     private final Logger logger = Logger.getLogger(this.getClass());
 
     @Override

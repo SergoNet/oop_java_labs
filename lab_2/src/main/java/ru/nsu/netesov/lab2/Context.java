@@ -6,9 +6,6 @@ import ru.nsu.netesov.lab2.exceptions.ThereIsNoSuchKeyException;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
-
-
-
 import java.util.HashMap;
 import java.util.NoSuchElementException;
 

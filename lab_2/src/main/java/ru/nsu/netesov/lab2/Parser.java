@@ -1,10 +1,7 @@
 package ru.nsu.netesov.lab2;
 
-
 import org.apache.log4j.Logger;
-
 import java.io.File;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,13 +10,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Parser {
-
     private final Logger logger = Logger.getLogger(this.getClass());
-
     public static final char commentSymbol = '#';
-
-    public List<List<String>> parse(String[] args)
-            throws IOException{
+    public List<List<String>> parse(String[] args)  throws IOException{
 
         logger.info("parser starts working");
         List<List<String>> commands = new ArrayList<>();
@@ -48,17 +41,13 @@ public class Parser {
             scanner = new Scanner(System.in);
         } else {
             File file = new File(args[0]);
-            //Utility.validateFile(file,"r");
             scanner = new Scanner(file);
         }
         return scanner;
     }
 
     private boolean validateLine(String line) {
-        if (line.isEmpty() || line.charAt(0) == commentSymbol) {
-            return false;
-        }
-        return true;
+        return !line.isEmpty() && line.charAt(0) != commentSymbol;
     }
 }
 

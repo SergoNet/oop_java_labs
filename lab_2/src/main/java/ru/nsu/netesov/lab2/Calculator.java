@@ -2,8 +2,7 @@ package ru.nsu.netesov.lab2;
 
 import ru.nsu.netesov.lab2.commands.Command;
 import org.apache.log4j.Logger;
-import ru.nsu.netesov.lab2.exceptions.CantCreateCommandException;
-import ru.nsu.netesov.lab2.exceptions.FabricExceptions;
+
 
 public class Calculator {
     private final Logger logger = Logger.getLogger(this.getClass());
@@ -15,7 +14,6 @@ public class Calculator {
         logger.info("calculator starts working");
         try {
             Fabric fabric = new Fabric();
-            Calculator calculator = new Calculator();
             var commandsAndTheirArgs = parser.parse(args);
 
             for (var commandAndArgs: commandsAndTheirArgs) {

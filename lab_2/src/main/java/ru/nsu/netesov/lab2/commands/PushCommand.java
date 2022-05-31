@@ -7,7 +7,6 @@ import ru.nsu.netesov.lab2.exceptions.IncorrectAmountOfArgsException;
 import java.util.List;
 
 public class PushCommand implements Command {
-
     private final Logger logger = Logger.getLogger(this.getClass());
 
     @Override

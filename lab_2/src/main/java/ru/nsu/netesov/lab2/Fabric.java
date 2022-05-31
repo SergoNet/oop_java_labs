@@ -6,7 +6,6 @@ import ru.nsu.netesov.lab2.commands.Command;
 import ru.nsu.netesov.lab2.exceptions.CantCreateCommandException;
 import ru.nsu.netesov.lab2.exceptions.FabricExceptions;
 
-
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -19,7 +18,6 @@ public class Fabric {
     private static final Logger logger = LogManager.getLogger(Fabric.class);
     private final Map<String, Command> mapCommand = new HashMap<>();
     private BufferedReader reader;
-
 
     public Fabric() throws FabricExceptions {
         logger.info("properties was loaded");
@@ -53,14 +51,13 @@ public class Fabric {
                     throw (new FabricExceptions(Utility.EXEPTION_FABRIC_CONFIGURATION_FILE));
                 }
             }
-        } catch (Throwable e) {
-            e.printStackTrace();
+        } catch (Throwable exceptions) {
+            exceptions.printStackTrace();
             throw (new FabricExceptions(Utility.EXEPTION_FABRIC_CONFIGURATION_FILE));
         }
     }
 
-    public Command getCommand(String str) throws CantCreateCommandException, FabricExceptions {
-        logger.info("returning the command");
+    public Command getCommand(String str) throws CantCreateCommandException {
         Command command = getMapCommands().get(str);
         if (command == null) {
             logger.error("the return command method caught an exception " + Utility.EXEPTION_INCORRECT_COMMAND);
@@ -68,7 +65,6 @@ public class Fabric {
         }
         return getMapCommands().get(str);
     }
-
 
     public Map<String, Command> getMapCommands() {
         return mapCommand;

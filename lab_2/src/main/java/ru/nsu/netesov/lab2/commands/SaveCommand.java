@@ -12,7 +12,6 @@ import java.io.PrintWriter;
 import java.util.List;
 
 public class SaveCommand implements Command {
-
     private final Logger logger = Logger.getLogger(this.getClass());
 
     @Override
@@ -29,7 +28,6 @@ public class SaveCommand implements Command {
             throw new IllegalArgumentException("problem with file " + args.get(1),e);
         }
         logger.info(args.get(0) +  " command finishes work");
-
     }
     private void validate(List<String> args) {
         if (args.size() != 2) {
